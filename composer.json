@@ -1,5 +1,5 @@
 {
-  "name": "acme/acme-sdk",
+  "name": "masrimcp/acme-sdk",
   "description": "Math operations SDK",
   "type": "library",
   "license": "Apache-2.0",
