@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare (strict_types = 1);
 
 namespace Acme\Sdk;
 
@@ -31,9 +31,9 @@ final class MathResponse implements JsonSerializable
      */
     public function __construct(float $result, string $operation, array $operands)
     {
-        $this->result = $result;
+        $this->result    = $result;
         $this->operation = $operation;
-        $this->operands = $operands;
+        $this->operands  = $operands;
     }
 
     /**
@@ -68,9 +68,9 @@ final class MathResponse implements JsonSerializable
     public function jsonSerialize(): array
     {
         return [
-            'result' => $this->result,
+            'result'    => $this->result,
             'operation' => $this->operation,
-            'operands' => $this->operands,
+            'operands'  => $this->operands,
         ];
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare (strict_types = 1);
 
 namespace Acme\Sdk\Tests;
 
@@ -19,7 +19,7 @@ final class MathControllerTest extends TestCase
 
     protected function setUp(): void
     {
-        $client = new MathClient();
+        $client           = new MathClient();
         $this->controller = $client->math();
     }
 
