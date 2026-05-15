@@ -76,5 +76,5 @@ jobs:
 
       - name: Run backward compatibility check
         run: |
-          echo "Checking backward compatibility from origin/main..."
-          vendor/bin/roave-backward-compatibility-check --from=origin/main
+          echo "Checking backward compatibility from previous commit..."
+          vendor/bin/roave-backward-compatibility-check --from=HEAD~1
