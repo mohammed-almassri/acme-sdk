@@ -35,10 +35,6 @@ jobs:
       - name: Run PHPStan
         run: composer analyze
 
-      - name: Check backward compatibility
-        run: composer bc-check
-        if: matrix.php-version == '8.3'
-
       - name: Run tests with coverage
         run: composer test:coverage
 
@@ -56,3 +52,27 @@ jobs:
             echo "Coverage threshold not met (minimum 80%)."
             exit 1
           }
+
+  backward-compatibility:
+    needs: quality
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup PHP 8.3
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+
+      - name: Install base dependencies
+        run: composer install --no-interaction --no-progress --prefer-dist
+
+      - name: Install backward compatibility checker
+        run: composer require --dev roave/backward-compatibility-check:^8.0
+
+      - name: Run backward compatibility check
+        run: vendor/bin/roave-backward-compatibility-check --from=origin/main
