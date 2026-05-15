@@ -35,6 +35,10 @@ jobs:
       - name: Run PHPStan
         run: composer analyze
 
+      - name: Check backward compatibility
+        run: composer bc-check
+        if: matrix.php-version == '8.3'
+
       - name: Run tests with coverage
         run: composer test:coverage
 
