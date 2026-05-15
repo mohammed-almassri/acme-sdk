@@ -32,7 +32,7 @@ final class MathControllerTest extends TestCase
 
     public function testAddReturnsExpectedResponse(): void
     {
-        $response = $this->controller->add(2.5, 3.5);
+        $response = $this->controller->add(2.5, 3.5, 'a');
 
         self::assertInstanceOf(MathResponse::class, $response);
         self::assertSame(6.0, $response->getResult());
