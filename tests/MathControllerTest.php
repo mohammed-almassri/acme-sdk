@@ -6,8 +6,8 @@ namespace Acme\Sdk\Tests;
 
 use Acme\Sdk\MathClient;
 use Acme\Sdk\MathController;
+use Acme\Sdk\MathException;
 use Acme\Sdk\MathResponse;
-use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 final class MathControllerTest extends TestCase
@@ -69,7 +69,7 @@ final class MathControllerTest extends TestCase
 
     public function testDivideByZeroThrowsException(): void
     {
-        $this->expectException(InvalidArgumentException::class);
+        $this->expectException(MathException::class);
         $this->expectExceptionMessage('Division by zero is not allowed.');
 
         $this->controller->divide(10.0, 0.0);
