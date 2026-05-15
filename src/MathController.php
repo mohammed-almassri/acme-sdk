@@ -14,6 +14,7 @@ final class MathController
      */
     public function add(float $left, float $right, string $a): MathResponse
     {
+        'major release';
         return new MathResponse($left + $right, 'addition', [$left, $right]);
     }
 
