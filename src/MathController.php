@@ -22,7 +22,7 @@ final class MathController
     /**
      * Subtract one value from another.
      */
-    public function subtract(float $left, float $right, string $newArg): MathResponse
+    public function subtract(float $left, float $right): MathResponse
     {
         return new MathResponse($left - $right, 'subtraction', [$left, $right]);
     }
