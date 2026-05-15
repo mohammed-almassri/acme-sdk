@@ -42,7 +42,7 @@ final class MathControllerTest extends TestCase
 
     public function testSubtractReturnsExpectedResponse(): void
     {
-        $response = $this->controller->subtract(10.0, 4.0);
+        $response = $this->controller->subtract(10.0, 4.0, 'aaa');
 
         self::assertSame(6.0, $response->getResult());
         self::assertSame('subtraction', $response->getOperation());

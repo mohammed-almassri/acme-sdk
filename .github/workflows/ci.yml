@@ -75,4 +75,6 @@ jobs:
         run: composer require --dev roave/backward-compatibility-check:^8.0
 
       - name: Run backward compatibility check
-        run: vendor/bin/roave-backward-compatibility-check --from=origin/main
+        run: |
+          echo "Checking backward compatibility from origin/main..."
+          vendor/bin/roave-backward-compatibility-check --from=origin/main
