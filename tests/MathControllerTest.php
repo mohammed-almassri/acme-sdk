@@ -32,7 +32,7 @@ final class MathControllerTest extends TestCase
 
     public function testAddReturnsExpectedResponse(): void
     {
-        $response = $this->controller->add(2.5, 3.5);
+        $response = $this->controller->add(2.5, 3.5, 'a');
 
         self::assertInstanceOf(MathResponse::class, $response);
         self::assertSame(6.0, $response->getResult());
@@ -77,7 +77,7 @@ final class MathControllerTest extends TestCase
 
     public function testMathResponseCanBeJsonSerialized(): void
     {
-        $response = $this->controller->add(1.0, 2.0);
+        $response = $this->controller->add(1.0, 2.0, 'a');
 
         $json = json_encode($response);
         self::assertNotFalse($json);

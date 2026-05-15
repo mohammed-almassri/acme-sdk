@@ -22,7 +22,6 @@ final class MathClient
         if ($this->mathController === null) {
             $this->mathController = new MathController();
         }
-        $a = 1;
 
         return $this->mathController;
     }
